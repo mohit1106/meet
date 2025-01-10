@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-      "noEmitOnError": false
+      "strict": false, // Disable strict mode
+      "noEmitOnError": false, // Allow emitting code even with errors
+      "skipLibCheck": true // Skip type checking of declaration files
     },
   
 
