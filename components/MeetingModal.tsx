@@ -1,17 +1,9 @@
-import React, { ReactNode } from 'react'
-
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
-import { Button } from './ui/button';
-
+"use client";
+import { ReactNode } from "react";
+import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
+import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
+import Image from "next/image";
 
 interface MeetingModalProps {
   isOpen: boolean;
@@ -21,15 +13,29 @@ interface MeetingModalProps {
   children?: ReactNode;
   handleClick?: () => void;
   buttonText?: string;
+  instantMeeting?: boolean;
   image?: string;
+  buttonClassName?: string;
   buttonIcon?: string;
 }
 
-const MeetingModal = ({ isOpen, onClose, title, className, children, handleClick, buttonText, image, buttonIcon }: MeetingModalProps) => {
+const MeetingModal = ({
+  isOpen,
+  onClose,
+  title,
+  className,
+  children,
+  handleClick,
+  buttonText,
+  instantMeeting,
+  image,
+  buttonClassName,
+  buttonIcon,
+}: MeetingModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
-      <DialogTitle className="sr-only">{title}</DialogTitle> 
+      <DialogTitle className="sr-only">{title}</DialogTitle>
         <div className="flex flex-col gap-6">
           {image && (
             <div className="flex justify-center">
@@ -40,7 +46,12 @@ const MeetingModal = ({ isOpen, onClose, title, className, children, handleClick
             {title}
           </h1>
           {children}
-          <Button className="bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0" onClick={handleClick}>
+          <Button
+            className={
+              "bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+            }
+            onClick={handleClick}
+          >
             {buttonIcon && (
               <Image
                 src={buttonIcon}
@@ -55,8 +66,7 @@ const MeetingModal = ({ isOpen, onClose, title, className, children, handleClick
         </div>
       </DialogContent>
     </Dialog>
+  );
+};
 
-  )
-}
-
-export default MeetingModal
+export default MeetingModal;
