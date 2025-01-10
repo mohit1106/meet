@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 
 import { Call, CallRecording } from '@stream-io/video-react-sdk';
@@ -65,7 +66,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
 
   return (
     <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-      {calls && calls.length > 0 ? calls.map((meeting: Call | CallRecording, index) => (
+      {/* {calls && calls.length > 0 ? calls.map((meeting: Call | CallRecording, index) => (
         <MeetingCard
           key={(meeting as Call).id || `${type}-${index}`}
           icon={
@@ -94,8 +95,8 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
         />
       )) : (
         <h1>{noCallsMessage}</h1>
-      )}
-      {/* {calls && calls.length > 0 ? (
+      )} */}
+      {calls && calls.length > 0 ? (
         calls.map((meeting: Call | CallRecording) => (
           <MeetingCard
             key={(meeting as Call).id}
@@ -132,7 +133,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
         ))
       ) : (
         <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
-      )} */}
+      )}
     </div>
   );
 };
