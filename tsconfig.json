@@ -1,4 +1,9 @@
 {
+    "compilerOptions": {
+      "noEmitOnError": false
+    },
+  
+
   "compilerOptions": {
     "lib": [
       "dom",
