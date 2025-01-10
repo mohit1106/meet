@@ -1,5 +1,6 @@
+
 import { cn } from '@/lib/utils';
-import { CallControls, CallingState, CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk';
+import { CallControls, CallingState, CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout, StreamCall, StreamTheme, useCallStateHooks } from '@stream-io/video-react-sdk';
 import React, { useState } from 'react'
 
 import {
@@ -42,7 +43,10 @@ const MeetingRoom = () => {
     }
   }
 
+
   return (
+
+
     <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
       <div className="relative flex size-full items-center justify-center">
           <div className=" flex size-full max-w-[1000px] items-center">
@@ -85,9 +89,7 @@ const MeetingRoom = () => {
           </div>
         </button>
         {!isPersonalRoom && <EndCallButton />}
-
       </div>
-      
     </section>
   )
 }
