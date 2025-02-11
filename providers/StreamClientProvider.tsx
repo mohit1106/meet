@@ -35,3 +35,4 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
   return <StreamVideo client={videoClient}>{children}</StreamVideo>;
 };
 
+export default StreamVideoProvider;
