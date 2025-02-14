@@ -12,6 +12,8 @@ interface HomeCardProps {
   handleClick?: () => void;
 }
 
+
+
 const HomeCard = ({ className, img, title, description, handleClick }: HomeCardProps) => {
   return (
     <section
